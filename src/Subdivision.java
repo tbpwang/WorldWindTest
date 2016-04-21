@@ -77,7 +77,7 @@ public class Subdivision {
 
     @Override
     public String toString() {
-        return "对应经纬度坐标为(单位：度)：(" + getCoordinate().getLongitude() + ", " + getCoordinate().getLatitude() + ")";
+        return "对应经纬度坐标为(单位：度)：(" + getCoordinate().getLongitude() + ", " + getCoordinate().getLatitude() + ") \b\n" + "排序为第 " + (int)Math.pow(this.currentRow - 1, 2) + " 个三角形";
     }
 
     class Coordinate {
