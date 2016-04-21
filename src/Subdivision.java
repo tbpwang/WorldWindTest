@@ -131,8 +131,7 @@ public class Subdivision {
             System.exit(0);
         }
 
-        //
-
+        //计算并输出
         System.out.println(subdivision.toString());
 
     }
