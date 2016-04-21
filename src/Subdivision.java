@@ -68,7 +68,7 @@ public class Subdivision {
     }
 
     public int maxRow() {
-        return (level + 1);
+        return (int)(Math.pow(2, level));
     }
 
     public int maxColumn(int row) {
@@ -77,7 +77,7 @@ public class Subdivision {
 
     @Override
     public String toString() {
-        return "对应经纬度坐标为：(" + getCoordinate().getLongitude() + ", " + getCoordinate().getLatitude() + ")";
+        return "对应经纬度坐标为(单位：度)：(" + getCoordinate().getLongitude() + ", " + getCoordinate().getLatitude() + ")";
     }
 
     class Coordinate {
@@ -118,7 +118,7 @@ public class Subdivision {
         int maxColumn = 0;
         if (i <= maxRow && i >= 0) {
             subdivision.setCurrentRow(i);
-            System.out.println("输入三角形所在的列(列的取值范围为[1, " + (maxColumn = subdivision.maxColumn(maxRow))  + "]):");
+            System.out.println("输入三角形所在的列(列的取值范围为[1, " + (maxColumn = subdivision.maxColumn(i))  + "]):");
         } else {
             System.out.println("输入了错误行数！");
             System.exit(0);
